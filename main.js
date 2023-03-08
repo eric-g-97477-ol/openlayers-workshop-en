@@ -5,6 +5,7 @@ import VectorSource from 'ol/source/Vector';
 import View from 'ol/View';
 import Link from 'ol/interaction/Link';
 import DragAndDrop from 'ol/interaction/DragAndDrop';
+import Modify from 'ol/interaction/Modify';
 
 const map = new Map({
   target: 'map-container',
@@ -27,6 +28,12 @@ map.addInteraction(
     new DragAndDrop({
       source: source,
       formatConstructors: [GeoJSON],
+    })
+  );
+
+map.addInteraction(
+    new Modify({
+      source: source,
     })
   );
 
